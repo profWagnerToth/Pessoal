@@ -1,0 +1,33 @@
+pvRegistro\
+\assets\
+--\config\
+--\css\
+---- styles.css
+--\db\
+---- conexao.php
+--\img\
+----\criativos\
+----\imgDiversas\
+----\logotipos\
+----\usuários\
+--\includes\
+---- footer.php
+---- header.php
+--\js\
+\backend\
+-- criar_usuario.php
+-- incluir_depoimento.php
+-- login.php
+-- painel eventos.php
+\pages
+--\casais\
+---- contato.php
+---- home_casais.php
+---- sobre.php
+--\eventos\
+---- eventos.php
+--\galeria\
+---- galeria.php
+--\recursos\
+---- recursos.php
+index.php

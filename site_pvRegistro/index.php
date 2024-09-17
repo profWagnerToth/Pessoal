@@ -170,8 +170,7 @@ require_once 'assets/db/conexao.php';
                             <div class="card-body">
                                 <h5 class="card-title">Encontre-nos no Mapa</h5>
                                 <div id="map" style="height: 300px; width: 100%;"></div>
-                                <a href="https://www.openstreetmap.org/?mlat=-23.573237&mlon=-46.035325#map=16/-23.5732/-46.0353"
-                                    target="_blank" class="btn btn-info mt-3">Traçar Rota</a>
+                                <button id="tracarRota" class="btn btn-info mt-3">Traçar Rota</button>
                             </div>
                         </div>
                     </div>
@@ -199,24 +198,11 @@ require_once 'assets/db/conexao.php';
         });
     </script>
 
-    <!-- Leaflet.js (Mapas) -->
+    <<!-- Leaflet.js (Mapas) -->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
-        var map = L.map('mapid').setView([-24.505748108787113, -47.841070374820006], 13); // Coordenadas de Registro, SP
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Adicionar marcador para a localização
-        var marker = L.marker([-24.505748108787113, -47.841070374820006]).addTo(map);
-        marker.bindPopup("<b>Palavra de Vida Registro</b><br>Rua Vitoria 399, Vila Ribeiropolis.").openPopup();
-    </script>
-
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
         // Inicializar o mapa
-        var map = L.map('map').setView([-24.505748108787113, -47.841070374820006], 13);
+        var map = L.map('map').setView([-24.505697491999427, -47.84105777420176], 13);
 
         // Adicionar a camada de mapa
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -224,11 +210,27 @@ require_once 'assets/db/conexao.php';
         }).addTo(map);
 
         // Adicionar marcador
-        L.marker([-24.505748108787113, -47.841070374820006]).addTo(map)
+        L.marker([-24.505697491999427, -47.84105777420176]).addTo(map)
             .bindPopup('Igreja Palavra de Vida<br>Rua Vitoria 399 - Vila Ribeiropolis, Registro, SP')
             .openPopup();
-    });
-</script>
+
+        // Função para traçar a rota no Google Maps
+        document.getElementById('tracarRota').addEventListener('click', function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var lat = position.coords.latitude;
+                    var lon = position.coords.longitude;
+                    var destination = "-24.505697491999427, -47.84105777420176"; // Coordenadas da igreja
+                    var url = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lon}&destination=${destination}&travelmode=driving`;
+                    window.open(url, '_blank');
+                }, function() {
+                    alert("Não foi possível acessar a localização. Verifique suas permissões de geolocalização.");
+                });
+            } else {
+                alert("Geolocalização não é suportada pelo seu navegador.");
+            }
+        });
+    </script>
 
 teste
 </html>

@@ -31,4 +31,4 @@ Se você deseja clonar e rodar algum dos meus projetos localmente, siga os passo
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio-pessoal.git
+   git clone git@github.com:profWagnerToth/Pessoal.git

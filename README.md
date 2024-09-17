@@ -20,8 +20,10 @@ Atualmente, estou explorando e trabalhando com as seguintes tecnologias:
 - **Bootstrap** para design responsivo
 
 ## Projetos
+Projeto01 - Site Pv Registro
+-- Idealizado para divulgar eventos da igreja palavra de vida e futuramente ter um gerenciamentos para igreja como backend
 
-_(Os projetos serão adicionados à medida que forem concluídos.)_
+_(Os projetos serão adicionados à medida que forem sendo realizados ou concluídos.)_
 
 ## Como Utilizar
 

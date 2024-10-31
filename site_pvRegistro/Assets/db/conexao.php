@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost'; // Ajuste conforme sua configuração
-$db   = 'ministerio_casais';
+$db   = 'pv';
 $user = 'root'; // Ajuste conforme sua configuração
 $pass = ''; // Ajuste conforme sua configuração
 $charset = 'utf8mb4';

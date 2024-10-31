@@ -1,11 +1,11 @@
 /* Estrutura básica */
-html, body {
-    margin: -8px;
-    height: 100%;    
-    overflow-x: hidden; /* Evita rolagem horizontal */
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
     overflow: auto;
     scrollbar-width: none;
-    scroll-behavior: smooth; /* Adiciona rolagem suave */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -15,46 +15,50 @@ body {
     line-height: 1.6;
 }
 
-/* Cabeçalho (Menu) */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10vh; /* Altura do cabeçalho */
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
+/* Navbar */
 .nav_bar {
-    background-color: #8c8d8e;
+    margin: -8px;
+    background-color: #0A1125;
+}
+
+.nav-link-white {
+    color: white !important;
+}
+
+.nav-link-white:hover {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Corpo */
-main {       
-    margin: -8px; /* Remover margens para evitar sobreposições */
-    padding: 0;
-    padding-top: 10vh; /* Adiciona espaço no topo igual à altura do cabeçalho */
+main {
     overflow: auto;
-    scrollbar-width: none;
     position: relative;
+    background-color: #0A1125;
 }
 
 /* Seções dentro do Main */
 section {
+    width: 100%;   
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Seções */
+#foto-impactante {
     width: 100%;
-    height: 100vh; /* Ocupa 100% da altura da tela */
+    height: 50vh;
+    background: url('../img/imgDiversas/banner.png') no-repeat center center/cover;
+    background-size: contain;
+    background-position: center;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Seção 1: Foto Impactante */
-#foto-impactante {
-    margin-top: -100px;
-    background: url('../img/culto2.jpg') no-repeat center center/cover;
-    background-attachment: fixed;    
+    color: white;
+    position: relative;
 }
 
 #foto-impactante .overlay {
@@ -64,7 +68,6 @@ section {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
 }
 
 #foto-impactante .content {
@@ -79,24 +82,17 @@ section {
     margin-bottom: 20px;
 }
 
-/* Seção 2: Culto Online */
 #culto-online {
     background-image: url('../img/multimidia2.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     position: relative;
-}
-
-#culto-online .content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
 }
 
 #culto-online::before {
@@ -107,15 +103,13 @@ section {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    z-index: 0;
 }
 
-/* Seção 3: Ministérios */
 #ministerios {
     background-image: url('../img/biblia.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -141,44 +135,31 @@ section {
 }
 
 .card-container {
-    margin-top: 300px; /* Ajusta a margem superior dos cards */
-}
-
-/* Estilo para os cards da seção Ministérios */
-#ministerios .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: none;
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo branco com 20% de opacidade */
-    color: #e0e7f2;
-}
-
-#ministerios .card:hover {
-    transform: translateY(-10px); /* Eleva o card em 10px ao passar o mouse */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6); /* Aumenta a sombra para dar a impressão de flutuação */
-}
-
-/* Ajustes adicionais para os cards */
-#ministerios .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 100px; /* Espaço entre os cards */
+    gap: 20px;
     justify-content: center;
     margin-top: 50px;
 }
 
 #ministerios .card {
-    width: 300px; /* Define a largura dos cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #e0e7f2;
     padding: 20px;
     border-radius: 10px;
+    flex: 1 1 300px;
+    /* Flexível com largura mínima */
 }
 
-/* Seção 4: Contato */
 #contato {
-    background-image: url('../img/cruz.jpg'); /* Adicione a imagem de fundo desejada */
+    width: 100%;
+    height: 50vh;
+    background-image: url('../img/cruz.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -194,80 +175,8 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Cor de filtro para melhorar a legibilidade */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
-}
-
-#contato .container {
-    position: relative;
-    z-index: 2;
-}
-
-#contato .contact-card {
-    background: rgba(255, 255, 255, 0.2); /* Fundo branco com 20% de opacidade */
-    color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-#contato .contact-card p {
-    margin: 10px 0;
-    font-size: 1.2rem;
-}
-
-#contato .contact-card li {
-    list-style: none;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-#contato .social-icons {
-    display: flex;
-    justify-content: left; /* Centraliza os ícones horizontalmente */
-    gap: 20px; /* Espaço entre os ícones */
-    margin-top: 20px; /* Espaço acima dos ícones */
-}
-
-#contato .social-icons a {
-    color: #f5f5f5; /* Cor padrão dos ícones */
-    font-size: 2rem; /* Tamanho dos ícones */
-    transition: color 0.3s ease;
-}
-
-#contato .social-icons a:hover {
-    color: #e0e7f2; /* Cor ao passar o mouse sobre o ícone */
-}
-
-/* Ícones das redes sociais */
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.social-icons a {
-    text-decoration: none;
-}
-
-#contato .social-icons .facebook {
-    color: #1877f2; /* Azul do Facebook */
-}
-
-#contato .social-icons .instagram {
-    color: #c13584; /* Rosa do Instagram */
-}
-
-#contato .social-icons .youtube {
-    color: #ff0000; /* Vermelho do YouTube */
-}
-
-#contato .social-icons .whatsapp {
-    color: #25d366; /* Verde do WhatsApp */
-}
-
-.social-icons i {
-    font-size: 2rem;
 }
 
 
@@ -279,22 +188,13 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.depoimentos-card .card-header {
-    font-weight: bold;
-    background-color: #e0e7f2;
-    color: #333;
-    border-bottom: 1px solid #ddd;
-}
-
 .depoimento-item {
     display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.2); /* Fundo branco com 20% de opacidade */        
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
-    display: flex;
-    align-items: flex-start;   
 }
 
 .user-photo {
@@ -304,91 +204,137 @@ section {
     margin-right: 10px;
 }
 
-.depoimento-content {
-    flex: 1;
-    color: #e0e7f2;
+
+/*Localização*/
+.text-uppercase{
+    color: #fff;
 }
 
-.h5_depoimento {
-    margin: 0;
-    font-size: 1.1rem;
+.endereco{
+    color: #fff;
 }
 
-.p_depoimento {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
-
-.icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.icon-btn i {
-    font-size: 1.2rem;
-}
-
-/* Estilo geral para os depoimentos */
-
-.user-photo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover; /* Ajusta a imagem para cobrir o elemento */
-}
-
-.h5_depoimento {
-    margin: 0;
-    font-size: 1.1rem;
-    color:#e0e7f2; /* Cor do nome */
-}
-
-.depoimento-date {
-    font-size: 0.9rem;
-    color:#e0e7f2; /* Cor da data */
-    margin: 0;
-}
-
-.p_depoimento {
-    margin: 5px 0;
-    color:#e0e7f2; /* Cor do texto do depoimento */
-}
-
-.card.bg-transparent {
-    background-color: rgba(255, 255, 255, 0.2); /* 20% de opacidade */
-    border: none;
-    overflow: hidden;
-}
-
-.map-responsive {
-    position: relative;
-    height: 0;
-    padding-bottom: 56.25%; /* Proporção de 16:9 */
-    height: 300px;
-}
-
-.map-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+#localizacao {
     width: 100%;
-    height: 100%;
-    border: none;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;    
 }
 
+/* Estilo para o título da seção de localização */
+#localizacao .card-title {
+    color: white;
+    /* Garante que o texto fique branco */
+}
+
+/* Estilo para o botão "Traçar Rota" */
+#tracarRota {
+    background-color: #28a745;
+    /* Verde mais forte */
+    border-color: #28a745;
+    /* Mantém a borda na mesma cor */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    transition: background-color 0.3s;
+    /* Transição suave para hover */
+}
+
+#tracarRota:hover {
+    background-color: #218838;
+    /* Verde mais escuro ao passar o mouse */
+    border-color: #1e7e34;
+    /* Borda mais escura ao passar o mouse */
+}
+
+/* Seção de Redes Sociais */
+
+#rede_sociais {
+    width: 100%;
+    height: 20%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+     
+}
+
+#rede_sociais .texto {
+    color: white;
+    /* Torna o texto branco */
+}
+
+
+
+#rede_sociais .social-icons a i {
+    font-size: 30px;
+    /* Define o tamanho dos ícones */
+}
 
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media only screen and (max-width: 1199px) {
     #contato .social-icons {
         flex-direction: column;
-        gap: 10px; /* Menor espaçamento entre os ícones */
+        gap: 10px;
     }
 
-    #contato .contact-card {
-        margin-bottom: 20px; /* Espaço abaixo do card de contato em telas menores */
+    #ministerios .card {
+        padding: 15px;
+        /* Reduz padding em telas menores */
+        font-size: 18pt;
+        /* Ajusta tamanho da fonte */
+    }
+
+    #ministerios .card-title {
+        font-size: 16px;
+        /* Ajusta título do card */
     }
 }
 
+@media only screen and (max-width: 767px) {
+    #foto-impactante h1 {
+        font-size: 2rem;
+        /* Ajusta título para dispositivos menores */
+    }
+
+    .card-container {
+        flex-direction: column;
+        /* Mudança de direção do card */
+    }
+
+    #contato .contact-card {
+        width: 95%;
+        /* Ajusta a largura em telas pequenas */
+    }
+}
+
+/* Footer */
+.footer {
+    /* Ajusta o padding do footer */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+#msg{    
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    /* Remove sublinhado */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    /* Sublinha ao passar o mouse */
+}

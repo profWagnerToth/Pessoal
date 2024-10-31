@@ -33,7 +33,7 @@ if (isset($_GET['logout'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/styles.css"> <!-- Caminho absoluto -->
 </head>
 
 <body>
@@ -41,7 +41,7 @@ if (isset($_GET['logout'])) {
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid nav_bar">
             <a class="navbar-brand" href="index.php">
-                <img src="assets/img/logotipos/Logo_PV_Branco.png" alt="Logotipo Ministério de Casais" class="img-fluid" style="max-height: 100px;">
+                <!-- <img src="assets/img/logotipos/Logo_PV_Branco.png" alt="Logotipo Ministério de Casais" class="img-fluid" style="max-height: 100px;"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,22 +49,22 @@ if (isset($_GET['logout'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'active'; ?>" href="index.php">Início</a>
+                        <a class="nav-link nav-link-white <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') echo 'active'; ?>" href="index.php">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if (basename($_SERVER['PHP_SELF']) == 'sobre.php') echo 'active'; ?>" href="sobre.php">Sobre Nós</a>
+                        <a class="nav-link nav-link-white <?php if (basename($_SERVER['PHP_SELF']) == 'sobre.php') echo 'active'; ?>" href="sobre.php">Sobre Nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if (basename($_SERVER['PHP_SELF']) == 'eventos.php') echo 'active'; ?>" href="eventos.php">Eventos</a>
+                        <a class="nav-link nav-link-white <?php if (basename($_SERVER['PHP_SELF']) == 'eventos.php') echo 'active'; ?>" href="eventos.php">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if (basename($_SERVER['PHP_SELF']) == 'galeria.php') echo 'active'; ?>" href="galeria.php">Galeria</a>
+                        <a class="nav-link nav-link-white <?php if (basename($_SERVER['PHP_SELF']) == 'galeria.php') echo 'active'; ?>" href="galeria.php">Galeria</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if (basename($_SERVER['PHP_SELF']) == 'recursos.php') echo 'active'; ?>" href="recursos.php">Recursos</a>
+                        <a class="nav-link nav-link-white <?php if (basename($_SERVER['PHP_SELF']) == 'recursos.php') echo 'active'; ?>" href="recursos.php">Recursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if (basename($_SERVER['PHP_SELF']) == 'contato.php') echo 'active'; ?>" href="contato.php">Contato</a>
+                        <a class="nav-link nav-link-white <?php if (basename($_SERVER['PHP_SELF']) == 'contato.php') echo 'active'; ?>" href="contato.php">Contato</a>
                     </li>
                 </ul>
                 <?php if (isset($usuario)): ?>
